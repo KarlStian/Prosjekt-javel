@@ -53,7 +53,7 @@ leser inn strømforbruk for en kunde for de tilsvarende årene og finner ut hva 
 
 I prosjektet skal vi kun se på den delen av en strømregning som er relatert direkte til forbruk og strømpris. Det er mulig å utvide Java programmene slik de tar hensyn til flere elemeneter for eksempel kraftledd, påslag og gebyrer.
 
-
+//test
 
 
 
