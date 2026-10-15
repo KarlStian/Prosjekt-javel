@@ -9,7 +9,7 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+        customers=new Customer[size];
 
     }
 
@@ -19,7 +19,11 @@ public class Customers {
 
         int count = 0;
 
-        // TODO
+        for (int i=0; i< customers.length; i++){
+            if (customers[i] !=null){
+                count++;
+            }
+        }
 
         return count;
     }
@@ -30,7 +34,12 @@ public class Customers {
         boolean funnet = false;
         Customer c = null;
 
-        // TODO
+        for (int i=0; i<customers.length; i++){
+            if (customers[i] !=null && customers[i].getId()== customer_id){
+                c=customers[i];
+                break;
+            }
+        }
 
         return c;
     }
@@ -40,7 +49,13 @@ public class Customers {
 
         boolean inserted = false;
 
-        // TODO
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] == null) {
+                customers[i] = c;
+                inserted = true;
+                break;
+            }
+        }
 
         return inserted;
     }
@@ -51,7 +66,13 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null && customers[i].getId() == customer_id) {
+                c = customers[i];
+                customers[i] = null;
+                break;
+            }
+        }
 
         return c;
     }
@@ -61,7 +82,17 @@ public class Customers {
 
         Customer[] customers = null;
 
-        // TODO
+        int count = countNonNull();
+        Customer[] activeCustomers = new Customer[count];
+        int index = 0;
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) {
+                activeCustomers[index] = customers[i];
+                index++;
+            }
+        }
+        customers = activeCustomers;
+
 
         return customers;
     }
